@@ -1,0 +1,40 @@
+
+#' > Check if paxckage available
+available::available("tester_marta")
+
+#' > delete NAMESPACE
+
+#' > Project Options : Build Tools to configure Roxygen to run whenever
+#' you execute certain package build commands
+
+devtools::document()
+usethis::use_readme_md()
+
+#' > On GitHub, make repo with the name as here
+
+#' > Add existing project to GitHub
+#' https://help.github.com/en/articles/adding-an-existing-project-to-github-using-the-command-line
+
+cd Dropbox/_PROJECTS/R/testermarta
+git init
+git remote add origin  git@github.com:martakarass/testermarta.git
+git remote -v
+git add .
+git commit -m "add new files"
+git push -u origin master
+
+usethis::use_travis()
+usethis::use_appveyor()
+
+#' > Correct .org to .com with travis
+
+
+
+# --------------------------------------------
+# checks
+
+devtools::check_win_devel()
+devtools::check_win_release()
+devtools::check_rhub()
+
+
